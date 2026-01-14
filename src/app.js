@@ -5,14 +5,52 @@ import tab2 from './components/tabs/tab2.vue';
 import tab3 from './components/tabs/tab3.vue';
 import loader from './components/loader.vue';
 import polarchart from './components/polarchart.vue';
+import rw from './components/rw.vue';
+import pageTemplate from './components/page-template.vue';
+import supercandle from './components/supercandle.vue';
+import queryheight from './components/queryheight.vue';
 import config from './config.js';
 import { getCookie } from './utils/cookieUtils.js';
 import { setMeta,getFormattedTime,getFormattedDate,dataConsole } from './utils/common.js';
 import { useDisplay } from 'vuetify'
 
+import CryptoJS from 'crypto-js';
+// 禁用F12调试模式
+(function() {
+  // 检测开发者工具是否打开
+  function detectDevTools() {
+    const startTime = new Date();
+    debugger;
+    const endTime = new Date();
+    return endTime - startTime > 100;
+  }
+
+  // 无限debugger
+  function antiDebug() {
+    if (detectDevTools()) {
+      // 开发者工具已打开，无限循环debugger
+      (function loop() {
+        setTimeout(loop, 100);
+        debugger;
+      })();
+    }
+  }
+
+  // 监听键盘事件，阻止F12
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+      e.stopPropagation();
+      antiDebug();
+    }
+  });
+
+  // 定期检测开发者工具
+  setInterval(antiDebug, 1000);
+})();
 export default {
   components: {
-    tab1,tab2,tab3,loader,homeright,typewriter,polarchart
+    tab1,tab2,tab3,loader,homeright,typewriter,polarchart,rw,supercandle,queryheight,pageTemplate
   },
   setup() {
     const { xs,sm,md } = useDisplay();
@@ -27,6 +65,10 @@ export default {
       configdata: config,
       dialog1: false,
       dialog2: false,
+      showRw: false,
+      showSuperCandle: false,
+      showQueryHeight: false,
+      showPageTemplate: false,
       personalizedtags: null,
       videosrc: '',
       ismusicplayer: false,

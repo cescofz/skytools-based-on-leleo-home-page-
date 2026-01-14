@@ -110,7 +110,7 @@
 
             <v-col cols="12" md="8" lg="9" style="height: 100vh;" :style="xs||sm ?{}:{'overflow': 'auto'}">
                 <homeright :configdata=configdata :formattedTime=formattedTime 
-                :formattedDate=formattedDate :projectcards=projectcards></homeright>
+                :formattedDate=formattedDate :projectcards=projectcards @open-rw="showRw = true" @open-supercandle="showSuperCandle = true" @open-query-height="showQueryHeight = true" @open-page-template="showPageTemplate = true"></homeright>
             </v-col>
         </v-row>
     </div>
@@ -252,6 +252,16 @@
           </div>
         </v-card>
     </v-dialog>
+    <!-- 光遇每日任务页面 -->
+    <rw v-show="showRw" @close="showRw = false"></rw>
+    <!-- 今日大蜡烛位置页面 -->
+    <supercandle v-show="showSuperCandle" @close="showSuperCandle = false"></supercandle>
+    <!-- API请求工具页面 -->
+    <queryheight v-show="showQueryHeight" @close="showQueryHeight = false"></queryheight>
+    <!-- 模板页面 -->
+    <pageTemplate v-show="showPageTemplate" @close="showPageTemplate = false"></pageTemplate>
+	
+	
   </v-app>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
       <div>
         <div>
-          <div :style="xs||sm?{'display':'none'}:{'font-size':'4rem'}" class="leleo-left-welcome">{{ configdata.welcometitle }}</div>
-        </div>
+          <div :style="xs||sm?{'display':'none'}:{'font-size':'4rem'}" class="leleo-left-welcome">{{ configdata.welcometitle }}</div>	
+		</div>
         <div>
           <v-row align="center">
             <v-col cols="12" md="8">
@@ -65,7 +65,7 @@
           </v-row>
           
           <v-chip class="mt-3 ml-3" prepend-icon="mdi-webhook"  size="large" style="color: var(--leleo-vcard-color);">
-            部署项目
+            ProjectCard
           </v-chip>
           <v-container>
             <v-row>
@@ -91,8 +91,30 @@
                   </v-card-subtitle>
 
                   <v-card-actions :style="xs||sm||md?{'padding': '0','min-height': '0','height':'2.5rem'}:{'min-height': '0','height':'2.8rem'}">
-                    <v-btn :href="item.url"
-                    target="_blank"
+                    <v-btn 
+                      v-if="item.title === '光遇每日任务'"
+                      @click="$emit('open-rw')"
+                      :text= "item.go"
+                    ></v-btn>
+                    <v-btn 
+                      v-else-if="item.title === '今日大蜡烛位置'"
+                      @click="$emit('open-supercandle')"
+                      :text= "item.go"
+                    ></v-btn>
+                    <v-btn 
+                      v-else-if="item.title === '光遇国服查询身高接口'"
+                      @click="$emit('open-query-height')"
+                      :text= "item.go"
+                    ></v-btn>
+                    <v-btn 
+                      v-else-if="item.title === '光遇红石日历'"
+                      @click="$emit('open-page-template')"
+                      :text= "item.go"
+                    ></v-btn>
+                    <v-btn 
+                      v-else
+                      :href="item.url"
+                      target="_blank"
                       :text= "item.go"
                     ></v-btn>
                     <v-spacer></v-spacer>
