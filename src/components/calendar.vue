@@ -2,13 +2,13 @@
 	<div class="page">
 		<div class="content">
 			<h1>光遇红石日历{{time}}</h1>
-			<!-- 加载状态 -->
+
 			<div v-if="loading" class="loading">
 				<v-progress-circular indeterminate></v-progress-circular>
 				<p>加载中...</p>
 			</div>
 
-			<!-- 错误状态 -->
+
 			<div v-else-if="error" class="error">
 				<p>{{ error }}</p>
 				<v-btn color="primary" @click="loadData">重试</v-btn>
@@ -26,7 +26,6 @@
 				<v-img :src="imageUrl" contain max-width="100%" height="auto" max-height="600" rounded></v-img>
 			</div>
 
-			<!-- 关闭按钮 -->
 			<v-btn color="primary" class="mt-4" @click="close">关闭</v-btn>
 		</div>
 	</div>
@@ -40,7 +39,7 @@
 				signString: null,
 				signature: null,
 				timestamp: Math.floor(Date.now() / 1000),
-				apikey: "VIcnEmKllp6c4",
+				apikey: "Your APIKEY",
 				secretKey: "c3b4558a7454ef28ea33418a9f22c4f7",
 				imageUrl: '',
 				imageLoading: false,
@@ -68,7 +67,7 @@
 				this.imageLoading = true;
 				this.imageError = null;
 				try {
-					fetch(`https://ovoav.com/api/sky/hstp/hsc/hsrl?key=VIcnEmKllp6c4&time=2026年${this.getCurrentTime()}月碎石`, {
+					fetch(`https://ovoav.com/api/sky/hstp/hsc/hsrl?key=Your APIKEY&time=2026年${this.getCurrentTime()}月碎石`, {
 							headers: {
 								'X-Api-Key': this.apikey,
 								'X-Api-Timestamp': String(this.timestamp),

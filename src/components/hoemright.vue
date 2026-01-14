@@ -108,7 +108,7 @@
                     ></v-btn>
                     <v-btn 
                       v-else-if="item.title === '光遇红石日历'"
-                      @click="$emit('open-page-template')"
+                      @click="$emit('open-calendar')"
                       :text= "item.go"
                     ></v-btn>
                     <v-btn 

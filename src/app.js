@@ -6,7 +6,7 @@ import tab3 from './components/tabs/tab3.vue';
 import loader from './components/loader.vue';
 import polarchart from './components/polarchart.vue';
 import rw from './components/rw.vue';
-import pageTemplate from './components/page-template.vue';
+import calendar from './components/calendar.vue';
 import supercandle from './components/supercandle.vue';
 import queryheight from './components/queryheight.vue';
 import config from './config.js';
@@ -50,7 +50,7 @@ import CryptoJS from 'crypto-js';
 })();
 export default {
   components: {
-    tab1,tab2,tab3,loader,homeright,typewriter,polarchart,rw,supercandle,queryheight,pageTemplate
+    tab1,tab2,tab3,loader,homeright,typewriter,polarchart,rw,supercandle,queryheight,calendar
   },
   setup() {
     const { xs,sm,md } = useDisplay();
@@ -68,7 +68,7 @@ export default {
       showRw: false,
       showSuperCandle: false,
       showQueryHeight: false,
-      showPageTemplate: false,
+      showCalendar: false,
       personalizedtags: null,
       videosrc: '',
       ismusicplayer: false,

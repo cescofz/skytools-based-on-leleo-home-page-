@@ -69,7 +69,7 @@ export default {
       this.loading = true;
       this.error = null;
       try {
-        const response = await fetch('https://api.t1qq.com/api/sky/gyrw?key=t7TB4UVUAfUFv31YLa9qYGBD9x');
+        const response = await fetch('https://api.t1qq.com/api/sky/gyrw?key=Your APIKEY');
         if (!response.ok) {
           throw new Error('网络请求失败');
         }
@@ -91,7 +91,7 @@ export default {
       this.imageError = null;
       try {
 
-        this.imageUrl = 'https://api.t1qq.com/api/sky/sc/scrw?key=t7TB4UVUAfUFv31YLa9qYGBD9x';
+        this.imageUrl = 'https://api.t1qq.com/api/sky/sc/scrw?key=Your APIKEY';
       } catch (err) {
         this.imageError = err.message;
       } finally {

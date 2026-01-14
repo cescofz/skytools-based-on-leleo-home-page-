@@ -43,8 +43,7 @@ export default {
       this.imageLoading = true;
       this.imageError = null;
       try {
-        // 直接使用API URL作为图片源，让浏览器处理加载
-        this.imageUrl = 'https://api.t1qq.com/api/sky/sc/scdl?key=t7TB4UVUAfUFv31YLa9qYGBD9x';
+        this.imageUrl = 'https://api.t1qq.com/api/sky/sc/scdl?key=Your APIKEY';
       } catch (err) {
         this.imageError = err.message;
       } finally {

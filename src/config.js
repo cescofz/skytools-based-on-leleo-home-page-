@@ -92,10 +92,10 @@ const config = {
 
 	//项目卡片 其中 字段"show"控制初始卡片的text是否展开
 	projectcards: [
-		{ go: "🚀 前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key=t7TB4UVUAfUFv31YLa9qYGBD9x", title: "光遇每日任务", text: "点击“前往”查看每日任务", show: true },
-		{ go: "🗂️ 前往", img: "https://api.t1qq.com/api/sky/sc/scdl?key=t7TB4UVUAfUFv31YLa9qYGBD9x", title: "今日大蜡烛位置",  text: "点击“前往”查看今日大蜡烛位置", show: true },
-		{ go: "🗂️ 前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key=t7TB4UVUAfUFv31YLa9qYGBD9x", title: "光遇国服查询身高接口",  text: "使用前请创建好友码", show: true },	
-		{ go: "📄 前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key=t7TB4UVUAfUFv31YLa9qYGBD9x", title: "光遇红石日历", text: "点击“前往”查看当月红石日历", show: true },		
+		{ go: "->前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key= Your APIKEY", title: "光遇每日任务", text: "点击“前往”查看每日任务", show: true },
+		{ go: "️->前往", img: "https://api.t1qq.com/api/sky/sc/scdl?key= Your APIKEY", title: "今日大蜡烛位置",  text: "点击“前往”查看今日大蜡烛位置", show: true },
+		{ go: "️->前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key= Your APIKEY", title: "光遇国服查询身高接口",  text: "使用前请创建好友码", show: true },	
+		{ go: "->前往", img: "https://api.t1qq.com/api/sky/sc/scrw?key= Your APIKEY", title: "光遇红石日历", text: "点击“前往”查看当月红石日历", show: true },		
 	],
 
 }
